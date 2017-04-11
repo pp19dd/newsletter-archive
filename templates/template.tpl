@@ -7,6 +7,7 @@
     <meta name="robots" content="noindex" />
 </head>
 <body>
+
     <header>
         <inner>
 {block name="header"}{/block}
@@ -17,11 +18,16 @@
         <inner>
 {block name="body"}{/block}
         </inner>
+        <sidebar>
+            <inner>
+{block name="sidebar"}{/block}
+            </inner>
+        </sidebar>
     </main>
 
     <footer>
         <inner>
-{block name="footer"}{/block}
+{block name="footer"}Footer{/block}
         </inner>
     </footer>
 

@@ -8,13 +8,30 @@ header, footer {
     color: #DDDDDD;
 }
 
+header, footer {
+    display: block;
+    margin: auto;
+}
+
+main, header inner, footer inner {
+    display: block;
+    max-width: 1100px;
+    margin: auto;
+}
+
+main { display: flex }
+main inner { background-color: #B10DC9 }
+sidebar { width: 300px; background-color: #0074D9 }
+
+
+footer {
+    color: #999999;
+}
+
 h1 {
     font-family: 'Open Sans', sans-serif;
 }
 
 inner {
-    display: block;
-    max-width: 1100px;
-    margin: auto;
     padding: 1em;
 }

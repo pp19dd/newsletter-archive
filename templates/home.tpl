@@ -6,4 +6,5 @@
 
 {block name="body"}
 [body]
+<pre>{$counts|print_r}</pre>
 {/block}
