@@ -1,0 +1,20 @@
+body, html {
+    margin: 0; padding:0;
+    font-family: 'Oswald', sans-serif;
+}
+
+header, footer {
+    background-color: black;
+    color: #DDDDDD;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+inner {
+    display: block;
+    max-width: 1100px;
+    margin: auto;
+    padding: 1em;
+}
