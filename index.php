@@ -11,9 +11,13 @@ $smarty->assign( "counts", $newsletters->data );
 
 $canonical = CONFIG_HOME . "/";
 
+
 if( !isset( $_GET['view']) ) {
     // show latest entry
-    $view = "2017-02-22";
+    $very_first_year = array_shift($newsletters->data);
+    $very_first_month = array_shift($very_first_year);
+    $very_first_day = each($very_first_month);
+    $view = $very_first_day["key"];
 } else {
     $view = $_GET['view'];
     $canonical .= "day-" . $view . "/";
