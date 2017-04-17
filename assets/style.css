@@ -1,6 +1,9 @@
 body, html {
     margin: 0; padding:0;
     font-family: 'Oswald', sans-serif;
+    background-color: #ffffff;
+    color: #111111;
+    background-color: #666;
 }
 
 header, footer {
@@ -19,10 +22,19 @@ main, header inner, footer inner {
     margin: auto;
 }
 
-main { display: flex }
-main inner { background-color: #B10DC9 }
-sidebar { width: 300px; background-color: #0074D9 }
-
+main { display: flex; align-items:stretch; }
+content {
+    flex-basis: auto;
+    width: 100%;
+    border-right: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+sidebar {
+    width: 30%;
+    background-color: #DDDDDD;
+    flex-basis: auto;
+    order: -1
+}
 
 footer {
     color: #999999;
@@ -34,4 +46,96 @@ h1 {
 
 inner {
     padding: 1em;
+}
+
+/* header, footer interaction */
+header a:hover, footer a:hover { color: white }
+
+/* header */
+header img { height:auto; object-fit: contain; max-width:300px }
+header h1 a { color: #FF851B; text-decoration: none }
+header h1 a:hover { color: #FF851B; text-decoration: underline }
+header img:hover { opacity: 0.8 }
+header inner { display: block; }
+
+header h1 { margin-top: 0 }
+header inner stuff h1 { padding-right: 1em }
+header inner stuff {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: stretch;
+}
+header a { color:#DDDDDD }
+
+header inner stuff div { display: flex; flex-direction: column; justify-content: space-between; align-items: stretch }
+.variant { flex-basis: auto }
+
+span.hidden { display: none }
+
+/*
+div.heading { background-color: yellow }
+div.logo { background-color: limegreen }
+*/
+
+header p { margin: 0; }
+
+/* sidebar */
+year h1 { padding-left: 1em; margin: 0 }
+month { display: flex; flex-direction: column; margin-bottom: 2em }
+month h2 { padding-left: 2em }
+day { padding-left: 4em }
+day a { text-decoration: none; color: #111111; }
+day a:hover { text-decoration: underline; color: #001f3f; }
+day a:visited { color: #0074D9; }
+
+day.current {
+    background-color: #0074D9;
+    color: #dddddd;
+}
+
+day.current a {
+    color: #dddddd;
+}
+
+/* newsletter */
+newsletter { display: block; margin-bottom: 3em; border-bottom:1px solid #dddddd; }
+newsletter * {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 16px !important;
+}
+newsletter-day {
+    display: block;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+newsletter a:hover { background-color: #DDDDDD !important; box-shadow: 0 0 10px #DDDDDD }
+newsletter a:hover img { opacity: 0.7 !important }
+
+/* footer */
+footer p { font-size: 1.5em; }
+footer a { color:#DDDDDD }
+
+@media( max-width: 850px ) {
+    body { overflow-x: hidden; }
+    sidebar inner { padding-left: 0; padding-right:1em }
+    sidebar h1, sidebar h2 { padding-left: 0.25em; }
+    sidebar day { padding-left: 0.5em; }
+}
+
+@media( max-width: 700px ) {
+    header inner stuff { display: block }
+    header div.logo p { display: none }
+    header span.hidden { display: inline }
+}
+
+@media( max-width: 750px ) {
+    newsletter-day { font-size: 1.5em; }
+}
+
+@media( max-width: 400px ) {
+    sidebar { font-size: 0.8em; }
 }
