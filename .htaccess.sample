@@ -1,5 +1,6 @@
 RewriteEngine on
 
+RewriteRule all/$ index.php?all [QSA,NC]
 RewriteRule day-(.*)/$ index.php?view=$1 [QSA,NC]
 
 ErrorDocument 404 /newsletter-archive/index.php?missing

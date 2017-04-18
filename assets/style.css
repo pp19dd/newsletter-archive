@@ -97,14 +97,10 @@ day a { text-decoration: none; color: #111111; }
 day a:hover { text-decoration: underline; color: #001f3f; }
 day a:visited { color: #0074D9; }
 days { display: flex; flex-direction: column; }
-day.current {
-    background-color: #0074D9;
-    color: #dddddd;
-}
-
-day.current a {
-    color: #dddddd;
-}
+day.current { background-color: #0074D9; color: #dddddd; }
+day.current a { color: #dddddd; }
+more { font-size: 1.5em; display: block; text-align: center; }
+more a { }
 
 /* newsletter */
 newsletter { display: block; margin-bottom: 3em; border-bottom:1px solid #dddddd; }
@@ -153,3 +149,10 @@ footer a { color:#DDDDDD }
 /* shiny */
 header, footer { box-shadow: 0 0 30px #111; }
 main { box-shadow: 0 0 30px #111; }
+
+/* all page */
+all-months {
+    display: flex;
+    flex-wrap: wrap;
+}
+content h1 { text-align: center }
