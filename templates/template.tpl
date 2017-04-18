@@ -5,14 +5,12 @@
     <title>{$title|default:"VOA Newsletter Archive"}</title>
     <link rel="canonical" href="{$canonical}" />
     <link href="{$home}/assets/style.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="This is a web archive of today@VOA, a daily e-mail newsletter featuring VOA's best content." />
-{block name="head"}{/block}    
+{block name="head"}{/block}
 </head>
 <body>
-
     <header>
         <inner>
             <stuff>

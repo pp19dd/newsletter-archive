@@ -2,9 +2,12 @@
 
 {block name="sidebar"}
 
+{$count = 0}
 {foreach from=$counts key=year item=months}
                 <year>
 {foreach from=$months key=month item=days}
+{$count = $count + 1}
+{if $count <=4}
                     <month>
                         <h2>{$month} {$year}</h2>
                         <days>
@@ -13,7 +16,7 @@
 {/foreach}
                         </days>
                     </month>
-
+{/if}
 {/foreach}
                 </year>
 {/foreach}
@@ -44,39 +47,4 @@
 {/if}
 {/if}
 
-{/block}
-
-{block name="bottom"}
-<script>
-function adjust_height() {
-    var h = $("main content inner").height();
-    var running_h = 0;
-    var move_nodes = [];
-    $("sidebar month").each(function() {
-        var th = $(this).height();
-        running_h += th;
-
-        //if( running_h > h - (th*0.333) ) {
-        if( running_h > (h - (th*0.5)) ) {
-            // $("days", this).before("<div>+ More</div>");
-            // $("days", this).hide();
-            move_nodes.push( this );
-        }
-        // console.info( "h = ", h, ", running_g = " + running_h);
-    });
-
-    if( move_nodes.length == 0 ) {
-        $("more").hide();
-    }
-
-    $.each(move_nodes, function() {
-        // $("after-newsletters").append(this);
-        $(this).hide();
-    });
-}
-
-{if $view != "all"}
-adjust_height();
-{/if}
-</script>
 {/block}
