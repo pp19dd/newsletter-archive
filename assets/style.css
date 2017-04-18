@@ -22,6 +22,8 @@ main, header inner, footer inner {
     margin: auto;
 }
 
+header { padding-bottom: 1em }
+
 main { display: flex; align-items:stretch; }
 content {
     flex-basis: auto;
@@ -30,10 +32,10 @@ content {
     background-color: #ffffff;
 }
 sidebar {
-    width: 30%;
+    width: 35%;
     background-color: #DDDDDD;
     flex-basis: auto;
-    order: -1
+    order: -1;
 }
 
 footer {
@@ -52,10 +54,14 @@ inner {
 header a:hover, footer a:hover { color: white }
 
 /* header */
-header img { height:auto; object-fit: contain; max-width:300px }
+header img {
+    height:auto;
+    object-fit: contain;
+    max-width:300px;
+}
 header h1 a { color: #FF851B; text-decoration: none }
 header h1 a:hover { color: #FF851B; text-decoration: underline }
-header img:hover { opacity: 0.8 }
+header img:hover { opacity: 0.8; }
 header inner { display: block; }
 
 header h1 { margin-top: 0 }
@@ -70,7 +76,8 @@ header inner stuff {
 header a { color:#DDDDDD }
 
 header inner stuff div { display: flex; flex-direction: column; justify-content: space-between; align-items: stretch }
-.variant { flex-basis: auto }
+.variant { flex-basis: auto; }
+p.variant { font-size: 1.25em; }
 
 span.hidden { display: none }
 
@@ -89,7 +96,7 @@ day { padding-left: 4em }
 day a { text-decoration: none; color: #111111; }
 day a:hover { text-decoration: underline; color: #001f3f; }
 day a:visited { color: #0074D9; }
-
+days { display: flex; flex-direction: column; }
 day.current {
     background-color: #0074D9;
     color: #dddddd;
@@ -112,8 +119,11 @@ newsletter-day {
     margin-bottom: 1em;
 }
 
-newsletter a:hover { background-color: #DDDDDD !important; box-shadow: 0 0 10px #DDDDDD }
-newsletter a:hover img { opacity: 0.7 !important }
+newsletter a { transition: all .5s ease;  }
+newsletter a:hover { background-color: #DDDDDD !important; box-shadow: 0 0 10px #DDDDDD;}
+newsletter img { opacity: 1; transition: all .5s ease; }
+newsletter a:hover img { opacity: 0.7 !important; transition: all .5s ease; transform:scale(1.05) }
+newsletter img { box-shadow: 8px 8px 10px #aaa; }
 
 /* footer */
 footer p { font-size: 1.5em; }
@@ -139,3 +149,7 @@ footer a { color:#DDDDDD }
 @media( max-width: 400px ) {
     sidebar { font-size: 0.8em; }
 }
+
+/* shiny */
+header, footer { box-shadow: 0 0 30px #111; }
+main { box-shadow: 0 0 30px #111; }
