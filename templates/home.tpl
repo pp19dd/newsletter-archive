@@ -38,7 +38,7 @@
 {foreach from=$posts item=post}
                     <newsletter-day>{$view|date_format:"l, d F Y"}</newsletter-day>
                     <newsletter>
-{$post.html|indent:24}
+{$post.html|replace:"medium=email":"medium=referral"|replace:"source=newsletter":"source=archives"|indent:24}
                     </newsletter>
 {/foreach}
                 </newsletters>

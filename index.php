@@ -6,27 +6,33 @@ require( "config.php" );
 $newsletters = new NewsletterParser();
 
 $smarty = new Smarty();
+$smarty->assign( "metrics", CONFIG_METRICS );
 $newsletters->getCountsFormat("%Y-%m-%d")->groupCountsByYearMonth();
 $smarty->assign( "counts", $newsletters->data );
 
 $canonical = CONFIG_HOME . "/";
 
+$most_recent = $newsletters->getMostRecent();
+
 if( isset( $_GET['all']) ) {
+    // show all archived days
     $canonical .= "all/";
     $view = "all";
     $template = "all.tpl";
+
+    $pubdate = $most_recent;
 } else {
     $template = "home.tpl";
 
     if( !isset( $_GET['view']) ) {
         // show latest entry
-        $very_first_year = array_shift($newsletters->data);
-        $very_first_month = array_shift($very_first_year);
-        $very_first_day = each($very_first_month);
-        $view = $very_first_day["key"];
+        $view = $most_recent;
+        $pubdate = $most_recent;
     } else {
+        // show requested entry
         $view = $_GET['view'];
         $canonical .= "day-" . $view . "/";
+        $pubdate = $view;
     }
 }
 
@@ -40,4 +46,5 @@ if( isset( $_GET['missing']) ) {
     $smarty->assign( "missing", true );
 }
 
+$smarty->assign( "pubdate", $pubdate );
 $smarty->display( $template );

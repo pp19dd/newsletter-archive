@@ -11,6 +11,7 @@
 {block name="head"}{/block}
 </head>
 <body>
+{include file="metrics.tpl"}
     <header>
         <inner>
             <stuff>

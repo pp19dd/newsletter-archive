@@ -78,6 +78,14 @@ class NewsletterParser {
         return( $this );
     }
 
+    // assumes no data transformation took place after query
+    function getMostRecent() {
+        $m1 = each($this->data);
+        $m2 = each($m1["value"]);
+        $m3 = each($m2["value"]);
+        return( $m3["key"] );
+    }
+
     function getPostIDs($date) {
         $this->Query(
             "select " .
