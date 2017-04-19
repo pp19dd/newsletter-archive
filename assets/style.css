@@ -152,7 +152,7 @@ span.sd { display: none }
 
 
 @media( max-width: 360px ) {
-    sidebar day { padding-left:0; }
+    sidebar day { padding-left:3px; }
 }
 
 /* shiny */
