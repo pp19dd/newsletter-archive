@@ -92,7 +92,7 @@ header p { margin: 0; }
 year h1 { padding-left: 1em; margin: 0 }
 month { display: flex; flex-direction: column; margin-bottom: 2em }
 month h2 { padding-left: 2em }
-day { padding-left: 4em }
+day { padding-left: 4em; line-height: 1.8em }
 day a { text-decoration: none; color: #111111; }
 day a:hover { text-decoration: underline; color: #001f3f; }
 day a:visited { color: #0074D9; }
@@ -142,8 +142,17 @@ footer a { color:#DDDDDD }
     newsletter-day { font-size: 1.5em; }
 }
 
+span.sd { display: none }
+
 @media( max-width: 400px ) {
     sidebar { font-size: 0.8em; }
+    span.ld { display: none }
+    span.sd { display: inline }
+}
+
+
+@media( max-width: 360px ) {
+    sidebar day { padding-left:0; }
 }
 
 /* shiny */
@@ -154,5 +163,8 @@ main { box-shadow: 0 0 30px #111; }
 all-months {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
-content h1 { text-align: center }
+all-head h1 { text-align: center }
+all-months day { padding-left: 1em }
+all-months h2 { padding-left: 0.5em }

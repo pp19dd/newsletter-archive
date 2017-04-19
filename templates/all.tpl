@@ -11,8 +11,9 @@ sidebar { display: none }
 
 {block name="body"}
 
-                <h1>All today@VOA Archives</h1>
-
+                <all-head>
+                    <h1>All today@VOA Archives</h1>
+                </all-head>
                 <all-months>
 {foreach from=$counts key=year item=months}
 {foreach from=$months key=month item=days}
