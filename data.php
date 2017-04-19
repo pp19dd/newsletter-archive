@@ -53,9 +53,9 @@ class NewsletterParser {
             "left join `wp_posts` " .
                 "on `wp_posts`.`ID`=`wp_postmeta`.`post_id` " .
             "where " .
-                "`meta_key`='timeline_renderer' and " .
-                "`meta_value`='timeline_renderer_newsletter' and " .
-                "`wp_posts`.`post_status`='publish' " .
+                "`meta_key`='_timeline_archive' and " .
+                "`meta_value`='yes' and " .
+                "`wp_posts`.`post_status` in ('publish','schedule') " .
             "group by `time-unit` " .
             "order by `time-unit` desc"
         )->Index("time-unit")->Flatten("rows");
