@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>{$title|default:"VOA Newsletter Archive"}</title>
     <link rel="canonical" href="{$canonical}" />
-    <link href="{$home}/assets/style.css" rel="stylesheet" />
+    <link href="{$home}/assets/style.css?ver={$version}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="This is a web archive of today@VOA, a daily e-mail newsletter featuring VOA's best content." />

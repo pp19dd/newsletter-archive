@@ -6,6 +6,7 @@ require( "config.php" );
 $newsletters = new NewsletterParser();
 
 $smarty = new Smarty();
+$smarty->assign( "version", time() );
 $smarty->assign( "metrics", CONFIG_METRICS );
 $newsletters->getCountsFormat("%Y-%m-%d")->groupCountsByYearMonth();
 $smarty->assign( "counts", $newsletters->data );
