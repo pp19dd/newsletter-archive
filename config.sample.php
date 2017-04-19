@@ -9,4 +9,4 @@ define( "CONFIG_TE", "http://localhost/timeline-editor" );
 define( "CONFIG_HOME", "http://localhost/newsletter-archive" );
 
 // true = metrics on, false = off
-define( "METRICS", false );
+define( "CONFIG_METRICS", false );
