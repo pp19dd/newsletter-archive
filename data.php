@@ -146,16 +146,33 @@ class NewsletterParser {
         return( $posts );
     }
 
+    function isPostArchived($post_id) {
+        $st = $this->db->prepare(
+            "select * from `wp_postmeta` where `post_id`=:id and `meta_key`=:key"
+        );
+        $st->execute(array(
+            "id" => $post_id,
+            "key" => "_timeline_archive"
+        ));
+        $valid = $st->fetchAll(PDO::FETCH_ASSOC);
+
+        if( empty($valid) ) return( false );
+        return( true );
+    }
+
     function getPosts($date) {
         $cache_filename = "cache/" . md5($date) . ".html";
 
-        if( file_exists($cache_filename) ) {
-            return( $this->sanitize(unserialize(file_get_contents($cache_filename)), true) );
-        }
+        # if( file_exists($cache_filename) ) {
+        #     return( $this->sanitize(unserialize(file_get_contents($cache_filename)), true) );
+        # }
 
         $this->getPostIDs($date);
         $r = array();
         foreach( $this->data as $post ) {
+
+            if( $this->isPostArchived($post["ID"]) === false ) continue;
+
             $url = sprintf(
                 "%s/preview/?timeline=%s&preview&format=bare&archive",
                 CONFIG_TE,
@@ -169,7 +186,7 @@ class NewsletterParser {
             );
         }
 
-        file_put_contents($cache_filename, serialize($r));
+        #file_put_contents($cache_filename, serialize($r));
         return( $this->sanitize($r) );
     }
 }
