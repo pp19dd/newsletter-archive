@@ -21,7 +21,7 @@ sidebar { display: none }
                         <h2>{$month} {$year}</h2>
                         <days>
 {foreach from=$days key=day item=count}
-                            <day{if $view == $day} class="current"{/if}><a href="{$home}/day-{$day}/">{$day|date_format:"%A, %m/%d"}</a>{if $count>1} ({$count}){/if}</day>
+                            <day{if $view == $day} class="current"{/if}><a href="{$home}/day-{$day}/">{$day|date_format:"%m/%d %A"}</a>{if $count>1} ({$count}){/if}</day>
 {/foreach}
                         </days>
                     </month>
