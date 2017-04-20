@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>{$title|default:"VOA Newsletter Archive"}</title>
+    <title>{$title|default:"Newsletter Archive | today@VOA"}</title>
     <link rel="canonical" href="{$canonical}" />
     <link href="{$home}/assets/style.css?ver={$version}" rel="stylesheet" />
+    <meta name="keywords" content="today@voa, voice of america, voa, voa newsletter" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="This is a web archive of today@VOA, a daily e-mail newsletter featuring VOA's best content." />
+    <meta name="description" content="Online archive of today@VOA, a daily e-mail newsletter highlighting the best of Voice of America's unique content." />
 {block name="head"}{/block}
 </head>
 <body>
