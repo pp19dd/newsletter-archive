@@ -17,11 +17,16 @@
             <stuff>
                 <div class="logo">
                     <a href="{$home}/"><img class="variant" src="{$home}/assets/logo.png" /></a>
+                    <p class="tagline">Informing, engaging &amp; connecting the people of the world.</p>
                     <p class="variant"><a href="http://www.voanews.com/subscribe.html">Subscribe</a></p>
                 </div>
                 <div class="heading">
                     <h1 class="variant"><a href="{$home}/">Newsletter Archive</a></h1>
-                    <p class="variant">This is a web archive of today@VOA, a daily e-mail newsletter featuring VOA's best content.<span class="hidden"> <a href="http://www.voanews.com/subscribe.html">Subscribe</a></a></p>
+                    <span class="hidden tagline">Informing, engaging &amp; connecting the people of the world.</span>
+                    <p class="variant">
+                        This is an online archive of today@VOA, a daily e-mail newsletter highlighting the best of VOA's unique content.
+                        <span class="hidden"> <a href="http://www.voanews.com/subscribe.html">Subscribe</a></span>
+                    </p>
                 </div>
             </stuff>
         </inner>
@@ -42,7 +47,7 @@
 
     <footer>
         <inner>
-            <p>This is a web archive of today@VOA, a daily e-mail newsletter featuring VOA's best content.</p>
+            <p>This is an online archive of today@VOA, a daily e-mail newsletter highlighting the best of VOA's unique content.</p>
             <p><a href="http://www.voanews.com/subscribe.html">Subscribe to Today@VOA Newsletter</a></p>
         </inner>
     </footer>
