@@ -11,7 +11,7 @@ var utag_data = {
     runs_js:"Yes",
     section:"Special Projects",
     english_section:"special-projects",
-    page_title:"Newsletter Archive",
+    page_title:"Newsletter Archive | today@VOA",
     page_type:"interactive",
     page_name:"Newsletter Archive",
     short_headline:"Newsletter Archive",
