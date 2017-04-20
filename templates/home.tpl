@@ -14,9 +14,7 @@
 {foreach from=$days key=day item=count}
                             <day{if $view == $day} class="current"{/if}>
                                 <a href="{$home}/day-{$day}/">
-                                    <span class="ld">{$day|date_format:"%A"}</span>
-                                    <span class="sd">{$day|date_format:"%a"}</span>
-                                    {$day|date_format:", %m/%d"}
+                                    {$day|date_format:"%m/%d"} <span class="ld">{$day|date_format:"%A"}</span><span class="sd">{$day|date_format:"%a"}</span> 
                                 </a>
                                 {if $count>1} ({$count}){/if}
                             </day>
