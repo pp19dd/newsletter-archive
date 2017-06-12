@@ -1,7 +1,7 @@
 <?php
+require( "config.php" );
 require( "vendor/autoload.php" );
 require( "data.php" );
-require( "config.php" );
 
 $newsletters = new NewsletterParser();
 
